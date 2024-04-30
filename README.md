@@ -2,14 +2,14 @@
 1. Начните с загрузки на ваш компьютер Node.js.
 2. После этого скачайте OpenServer.
 3. Переместите загруженный проект в папку 'domains' в корневой директории OpenServer.
-4. Откройте проект в Visual Studio.
+4. Откройте проект в Visual Studio Code.
 5. Запустите терминал и перейдите в папку 'front' с помощью команды 'cd front'.
 6. Выполните команду 'npm install'.
 7. Запустите проект с помощью команды 'npm run serve'.
 8. После этого запустите OpenServer.
 9. Нажмите правой кнопкой мыши на иконку OpenServer и выберите 'Запустить'.
 10. Подключите базу данных.
-11. Откройте настройки OpenServer и выберите следующие параметры:
+11. Откройте настройки OpenServer. Выбрать вкладку 'модули' и выберите следующие параметры:
    - Apache 2.4
    - PHP 8.0-8.1
    - PHP 8.0
@@ -23,7 +23,7 @@
 1. Start by downloading Node.js to your computer.
 2. After that, download OpenServer.
 3. Move the downloaded project to the 'domains' folder in the root directory of OpenServer.
-4. Open the project in Visual Studio.
+4. Open the project in Visual Studio Code.
 5. Launch the terminal and navigate to the 'front' folder using the 'cd front' command.
 6. Run the 'npm install' command.
 7. Run the project using the 'npm run serve' command.
@@ -40,4 +40,3 @@
 14. Go to 'Import' and load the database from the SQL file downloaded from GitHub.
 15. Click 'Import' to load the database.
 
-Translated with DeepL.com (free version)
