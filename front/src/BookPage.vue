@@ -855,6 +855,7 @@ form.form-container {
 }
 
 .shoeName div .big {
+  white-space: nowrap;
   margin-right: 10px;
   font-size: 1.7rem;
   color: #333;

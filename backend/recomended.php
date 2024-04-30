@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = $_POST['name'];
 
         // Получаем список купленных книг пользователя
-        $query = "SELECT DISTINCT book_name FROM history_buy WHERE name = '$name' LIMIT 5";
+        $query = "SELECT DISTINCT book_name FROM history_buy WHERE name = '$name'";
         $result = mysqli_query($conn, $query); 
         if (!$result) {
             die('Ошибка выполнения запроса: ' . mysqli_error($conn));
@@ -51,11 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_free_result($result);
         mysqli_close($conn);
 
-        $random_genre = array_rand($genre, min(5, count($genre)));
-
         header('Content-Type: application/json');
 
-            echo json_encode(array_intersect_key($genre, array_flip($random_genre)));
+        echo json_encode(array_intersect_key($genre));
     }
 }
 ?>
