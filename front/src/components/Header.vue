@@ -1,4 +1,43 @@
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
+
+let currentLanguage = locale.value;
+
+function changeLanguage(lang) {
+  locale.value = lang;
+  currentLanguage = lang;
+}
+console.log(t);
+</script>
 <style scoped>
+.language-switch {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 11%;
+}
+
+.language-switch input[type="radio"] {
+  display: none;
+}
+
+.language-switch label {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.language-switch input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+}
 .dropdown__menu {
   position: absolute;
   top: 100%;
@@ -59,13 +98,11 @@
         <div class="header__top">
           <div class="header__navigation">
             <div class="location">
-              <div class="location__label">Ваш город:</div>
+              <div class="location__label">{{ $t("location") }}:</div>
               <div class="lacation__city">Одесса</div>
             </div>
             <nav class="nav-top">
-              <a href="#">Оплата и доставка</a>
-              <a href="#">О компании</a>
-              <a href="#">Поддержка</a>
+              <router-link to="/info">{{ $t("AboutCompany") }}</router-link>
             </nav>
           </div>
           <div class="user-menu">
@@ -76,7 +113,7 @@
                 @mouseover="showProfileInfo = true"
                 @mouseleave="showProfileInfo = false"
               >
-                <span>Добро пожаловать, {{ getUsername() }}</span>
+                <span>{{ $t("Welcome") }}, {{ getUsername() }}</span>
                 <button
                   @click="logout"
                   style="background: none; border: none; vertical-align: middle"
@@ -94,19 +131,19 @@
                       src="../icons/shopping-basket.svg"
                       alt=""
                     />
-                    История покупок</span
-                  ></router-link
+                    {{ $t("HistoryBuy") }}
+                  </span></router-link
                 >
               </div>
             </template>
             <template v-else>
-              <a href="#" data-toggle="modal" data-target="#loginModal"
-                >Войти</a
-              >
+              <a href="#" data-toggle="modal" data-target="#loginModal">{{
+                $t("SignIN")
+              }}</a>
               <span>/</span>
-              <a href="#" data-toggle="modal" data-target="#registerModal"
-                >Зарегистрироваться</a
-              >
+              <a href="#" data-toggle="modal" data-target="#registerModal">{{
+                $t("SignUP")
+              }}</a>
             </template>
           </div>
         </div>
@@ -119,7 +156,7 @@
               <div class="dropdown">
                 <router-link to="/Main"
                   ><div class="navigation__btn" @click="toggleDropdown">
-                    Главная
+                    {{ $t("Main") }}
                   </div></router-link
                 >
               </div>
@@ -134,7 +171,7 @@
                   v-model="searchQuery"
                   @input="searchBooks"
                   class="c-form__input"
-                  placeholder="Поиск книги..."
+                  :placeholder="$t('Search')"
                   type="text"
                   required
                 />
@@ -178,6 +215,27 @@
           </div>
 
           <div class="header__nav-purchases">
+            <div class="language-switch">
+              <input
+                type="radio"
+                id="english"
+                name="language"
+                value="en"
+                v-model="currentLanguage"
+                @change="changeLanguage('en')"
+              />
+              <label for="english">ENG</label>
+              <input
+                type="radio"
+                id="ukrainian"
+                name="language"
+                value="ua"
+                v-model="currentLanguage"
+                @change="changeLanguage('ua')"
+              />
+              <label for="ukrainian">UA</label>
+            </div>
+
             <div v-if="data.levelAccess > 1" class="settings">
               <router-link to="../AdminPanel"
                 ><button class="settings__btn">
@@ -203,7 +261,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <h5 class="modal-title" id="loginModalLabel">{{ $t("SignIN") }}</h5>
           <button
             type="button"
             class="close"
@@ -217,7 +275,8 @@
           <!-- Login Form -->
           <form @submit.prevent="login">
             <div class="form-group">
-              <label for="username">Username</label><br /><br />
+              <label for="username">{{ $t("username") }}</label
+              ><br /><br />
               <input
                 type="text"
                 class="form-control"
@@ -226,7 +285,8 @@
               />
             </div>
             <div class="form-group">
-              <label for="password">Password</label><br /><br />
+              <label for="password">{{ $t("pass") }}</label
+              ><br /><br />
               <input
                 type="password"
                 class="form-control"
@@ -234,13 +294,14 @@
                 v-model="password"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">
+              {{ $t("SignIN") }}
+            </button>
           </form>
         </div>
       </div>
     </div>
     <div>
-      <!-- Здесь ваш шаблон -->
       <!-- Уведомление -->
       <div
         v-if="successMessage"
@@ -267,7 +328,9 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="registerModalLabel">Register</h5>
+          <h5 class="modal-title" id="registerModalLabel">
+            {{ $t("SignUP") }}
+          </h5>
           <button
             type="button"
             class="close"
@@ -281,7 +344,8 @@
           <!-- Register Form -->
           <form @submit.prevent="registerUser">
             <div class="form-group">
-              <label for="newUsername">Username</label><br /><br />
+              <label for="newUsername">{{ $t("username") }}</label
+              ><br /><br />
               <input
                 type="text"
                 class="form-control"
@@ -291,7 +355,8 @@
             </div>
 
             <div class="form-group">
-              <label for="newEmail">Email</label><br /><br />
+              <label for="newEmail">{{ $t("email") }}</label
+              ><br /><br />
               <input
                 type="email"
                 class="form-control"
@@ -300,7 +365,8 @@
               />
             </div>
             <div class="form-group">
-              <label for="newPassword">Password</label><br /><br />
+              <label for="newPassword">{{ $t("pass") }}</label
+              ><br /><br />
               <input
                 type="password"
                 class="form-control"
@@ -308,7 +374,9 @@
                 v-model="password"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">
+              {{ $t("SignUP") }}
+            </button>
           </form>
         </div>
       </div>

@@ -7,6 +7,9 @@ import BookPage from "./BookPage.vue";
 import AdminOrder from "./AdminOrder.vue";
 import AdminBuyList from "./AdminBuyList.vue";
 import myHistory from "./myHistory.vue";
+import info from "./info.vue";
+
+import i18n from "./i18n";
 
 const routes = [
   {
@@ -40,6 +43,11 @@ const routes = [
     component: myHistory,
     meta: { title: "Моя история покупок" },
   },
+  {
+    path: "/info",
+    component: info,
+    meta: { title: "О компании" },
+  },
 ];
 
 const router = createRouter({
@@ -49,6 +57,7 @@ const router = createRouter({
 
 const app = createApp(App);
 app.use(router);
+app.use(i18n);
 
 router.afterEach((to) => {
   document.title = to.meta.title || "По умолчанию";

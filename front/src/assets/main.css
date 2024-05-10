@@ -578,17 +578,6 @@ button.c-form__button {
   position: relative;
 }
 
-.user-menu a:first-child::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 14px;
-  height: 14px;
-  transform: translateY(-50%);
-  background: url(../icons/login.svg) no-repeat center/contain;
-}
-
 .user-menu span {
   margin-left: 2px;
   margin-right: 2px;

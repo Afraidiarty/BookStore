@@ -2,7 +2,7 @@
   <div class="content">
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Админ-панель</a>
+        <a class="navbar-brand" href="#">Admin Panel</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,16 +17,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Книги</a>
+              <a class="nav-link" href="#">Books</a>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="AdminOrder"
-                >Просмотр заявок</router-link
+                >List order</router-link
               >
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="AdminBuyList"
-                >История покупок пользователей</router-link
+                >List user buy history</router-link
               >
             </li>
           </ul>
@@ -34,41 +34,41 @@
       </nav>
     </div>
     <div class="container mt-5">
-      <h1 class="mb-4">Управление книгами</h1>
+      <h1 class="mb-4">Book management</h1>
 
       <!-- Форма для добавления книги -->
       <div class="card mb-4">
-        <div class="card-header">Добавить книгу</div>
+        <div class="card-header">Add book</div>
         <div class="card-body">
           <form @submit.prevent="addBooks">
             <div class="form-group">
-              <label for="title">Название книги</label><br /><br />
+              <label for="title">Title book</label><br /><br />
               <input
                 type="text"
                 class="form-control"
                 id="title"
                 v-model="Title"
-                placeholder="Введите название книги"
+                placeholder="Enter the title of the book"
               />
             </div>
             <div class="form-group">
-              <label for="author">Автор</label><br /><br />
+              <label for="author">Author</label><br /><br />
               <input
                 type="text"
                 class="form-control"
                 id="author"
                 v-model="author"
-                placeholder="Введите автора книги"
+                placeholder="Enter the author of the book"
               />
             </div>
             <div class="form-group">
-              <label for="genre">Издательство</label><br /><br />
+              <label for="genre">Publisher</label><br /><br />
               <input
                 type="text"
                 class="form-control"
                 id="izdatel"
                 v-model="izdatel"
-                placeholder="Введите издательство книги"
+                placeholder="Enter the publisher of the book"
               />
             </div>
             <div class="form-group">
@@ -93,7 +93,7 @@
             </div>
 
             <div class="form-group">
-              <label for="genre">Описание</label><br /><br />
+              <label for="genre">Description</label><br /><br />
               <textarea
                 v-model="desc"
                 class="form-control"
@@ -104,7 +104,7 @@
               ></textarea>
             </div>
             <div class="form-group">
-              <label for="genre">Кол-во страниц</label><br /><br />
+              <label for="genre">Number of pages</label><br /><br />
               <input
                 v-model="PageCount"
                 type="number"
@@ -113,7 +113,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="genre">Цена</label><br /><br />
+              <label for="genre">Price</label><br /><br />
               <input
                 v-model="price"
                 type="number"
@@ -122,7 +122,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="img">Обложка</label><br /><br />
+              <label for="img">Image</label><br /><br />
               <input
                 type="file"
                 class="form-control"
@@ -132,24 +132,24 @@
               />
             </div>
 
-            <button type="submit" class="btn btn-primary">Добавить</button>
+            <button type="submit" class="btn btn-primary">ADD</button>
           </form>
         </div>
       </div>
 
       <!-- Таблица с книгами -->
       <div class="card">
-        <div class="card-header">Список книг</div>
+        <div class="card-header">List books</div>
         <div class="card-body">
           <table class="table">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Название</th>
-                <th>Автор</th>
-                <th>Жанр</th>
-                <th>Цена</th>
-                <th>Действия</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -164,13 +164,13 @@
                     class="btn btn-sm btn-primary"
                     @click="openEditModal(book.id)"
                   >
-                    Редактировать
+                    Edit books
                   </button>
                   <button
                     class="btn btn-sm btn-danger"
                     @click="deleteBook(book.id)"
                   >
-                    Удалить
+                    Delete books
                   </button>
                 </td>
               </tr>

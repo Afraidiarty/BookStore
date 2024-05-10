@@ -15,27 +15,27 @@
           <div>
             <h1 class="big">{{ book.title }}</h1>
           </div>
-          <h3 class="small">Автор: {{ book.author }}</h3>
-          <h3 class="small">Издатель: {{ book.izdatel }}</h3>
-          <h3 class="small">Количество страниц {{ book.pageCount }}</h3>
+          <h3 class="small">{{ $t("author") }}: {{ book.author }}</h3>
+          <h3 class="small">{{ $t("izdatel") }}: {{ book.izdatel }}</h3>
+          <h3 class="small">{{ $t("countPage") }}: {{ book.pageCount }}</h3>
           <h3
             @click="showModal = true"
             class="small"
             style="font-weight: 600; cursor: pointer"
           >
-            Читать описание...
+            {{ $t("read_desc") }}
           </h3>
         </div>
 
         <div class="genre-container">
-          <h3 class="title">Жанр</h3>
+          <h3 class="title">{{ $t("genre") }}</h3>
           <div class="genres">
             <span class="genre">{{ book.genre }}</span>
           </div>
         </div>
         <div class="buy-price">
           <a @click.prevent="openPurchaseModal(book.id)" href="#" class="buy"
-            ><i class="fas fa-shopping-cart"></i>Купить</a
+            ><i class="fas fa-shopping-cart"></i>{{ $t("buy") }}</a
           >
           <div class="price">
             <i class="fas fa-dollar-sign"></i>
@@ -178,9 +178,11 @@
 
   <div class="modaler-overlay" v-show="showModal"></div>
   <div v-for="book in books" :key="book.id" v-show="showModal" class="modaler">
-    <h1>Описание</h1>
+    <h1>{{ $t("desc") }}</h1>
     <p>{{ book.description }}</p>
-    <button class="button" @click="showModal = false">Close Modal</button>
+    <button class="button" @click="showModal = false">
+      {{ $t("close_modal") }}
+    </button>
   </div>
 
   <PurchaseModal

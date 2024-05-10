@@ -1,7 +1,7 @@
 <?php
 include 'core/func.php';
 
-$query = "SELECT DISTINCT Books.id, Books.title, Books.author, Books.izdatel, Books.genre, Books.description, Books.pageCount, Books.price, Books.coverImage, commercial.rating
+$query = "SELECT DISTINCT Books.id, Books.title, Books.author, Books.izdatel, Books.genre, Books.description, Books.pageCount, Books.price, Books.coverImagec, commercial.rating
           FROM Books
           INNER JOIN commercial ON Books.id = commercial.book_id
           ORDER BY commercial.rating DESC

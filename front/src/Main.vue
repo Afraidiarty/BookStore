@@ -5,7 +5,7 @@
       <div class="container">
         <div class="section__top">
           <div class="section__titles">
-            <h1 class="section__title">Популярные книги</h1>
+            <h1 class="section__title">{{ $t("popular_books") }}</h1>
           </div>
         </div>
         <template v-if="books && books.length">
@@ -29,7 +29,7 @@
                     >Купить</a
                   >
                 </div>
-                <div v-else class="warn__to">Войдите в аккаунт</div>
+                <div v-else class="warn__to">{{ $t("plz_signin") }}</div>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@
             "
           >
             <h2 style="font-size: 40px; font-family: 'Montserrat'">
-              Книги отсутвуют
+              {{ $t("not_exist") }}
             </h2>
           </div>
         </template>
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="section__top">
           <div class="section__titles">
-            <h1 class="section__title">Рекомендованные книги</h1>
+            <h1 class="section__title">{{ $t("recomended") }}</h1>
           </div>
         </div>
         <template v-if="books && dataRecomended.length">
@@ -77,7 +77,7 @@
                     href="#"
                     class="card_buy"
                     @click.prevent="openPurchaseModal(book.id)"
-                    >Купить</a
+                    >{{ $t("buy") }}</a
                   >
                 </div>
               </div>
@@ -95,7 +95,7 @@
             "
           >
             <h2 style="font-size: 40px; font-family: 'Montserrat'">
-              Книги отсутвуют
+              {{ $t("not_exist") }}
             </h2>
           </div>
         </template>
