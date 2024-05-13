@@ -1,0 +1,64 @@
+{
+  "location": "Your location",
+  "opldost": "Payment and delivery",
+  "AboutCompany": "About the company",
+  "Support": "Support",
+  "Welcome": "Welcome",
+  "HistoryBuy": "Purchase history",
+  "SignIN": "Sign in",
+  "SignUP": "Sign up",
+  "Main": "Main",
+  "Search": "Search for a book...",
+
+  "popular_books": "Popular books",
+  "not_exist": "Books not available",
+  "recomended": "Recommended books",
+
+  "username": "Username",
+  "email": "Email",
+  "pass": "Password",
+
+  "plz_signin": "Please sign in",
+  "buy": "Buy",
+  "historyBuy": "Book purchase history",
+  "numBuy": "Purchase number",
+  "nameBook": "Book name",
+  "price": "Price",
+  "genre": "Genre",
+
+  "read_desc": "Read genre...",
+  "author": "Author",
+  "countPage": "Number of pages",
+  "izdatel": "Publisher",
+
+  "desc": "Description book",
+  "close_modal": "Close",
+
+  "add_order": "Order Placement",
+  "FIO": "Full Name",
+  "phone": "Phone",
+  "order": "Place an Order",
+
+  "located_company": "Where are we located ?",
+  "located_desc": "Our stores are located in many different countries. We have stores in every country of the EU! If we're not located in your country, you can easily order our books from other countries. We have international ordering available.",
+
+  "Rare_Auth": "Can I find rare books and authors?",
+  "Auth_desc": "Yes, you can! Our store has around 250,000 books! Additionally, we have some special and limited books, books with authors' signatures, and hand-written books!",
+
+  "deliver_s": "What about the delivery system?",
+  "deliver_desc": "We offer international delivery service as well as local delivery. You can order our books in every country of the EU, USA, and Asia (Japan, China, Australia, and the Philippines).",
+
+  "card__title_1": "Can I become a member of this community?",
+  "card__desc_1": "Yes, you can join us at any time! When you become a member of our community, you'll receive special promotions exclusive to members (such as sales, book bundles, early notifications, and more). You'll also have your own manager who will help you discover interesting and new opportunities.",
+
+  "card__title_2": "How can I pay?",
+  "card__desc_2": "You can use various payment methods, including cash, cryptocurrency, and cards. However, please note that we do not accept payments through the 'Mir' payment system due to modern policies in the USA and EU.",
+
+  "card__title_3": "How can I contact you?",
+  "card__desc_3": "Below are our contact details:",
+
+  "Story_": "Story of creation",
+  "legend": "How small idea become a legend",
+
+  "cetat": "The possibilities are always greater than our thinking boundaries."
+}

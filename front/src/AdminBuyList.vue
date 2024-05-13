@@ -2,7 +2,7 @@
   <div class="content">
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Админ-панель</a>
+        <a class="navbar-brand" href="#">Admin Panel</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,16 +17,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link" to="AdminPanel">Книги</router-link>
+              <router-link class="nav-link" to="AdminPanel">Books</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="AdminOrder"
-                >Просмотр заявок</router-link
+                >List order</router-link
               >
             </li>
             <li class="nav-item active">
               <router-link class="nav-link" to="AdminBuyList"
-                >История покупок пользователей</router-link
+                >List user buy history</router-link
               >
             </li>
           </ul>
@@ -36,14 +36,14 @@
   </div>
   <div class="content">
     <br />
-    <h1 style="text-align: center; font-size: 2em">История покупок книг</h1>
+    <h1 style="text-align: center; font-size: 2em">List buy books</h1>
     <br />
     <table class="table">
       <thead>
         <tr>
-          <th>ID номер покупки</th>
-          <th>Название Книги</th>
-          <th>Пользователь (ник)</th>
+          <th>ID purchase number</th>
+          <th>Book Title</th>
+          <th>User (nickname)</th>
         </tr>
       </thead>
       <tbody>

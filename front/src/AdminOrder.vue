@@ -2,7 +2,7 @@
   <div class="content">
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Админ-панель</a>
+        <a class="navbar-brand" href="#">Admin Panel</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,16 +17,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link" to="AdminPanel">Книги</router-link>
+              <router-link class="nav-link" to="AdminPanel">Books</router-link>
             </li>
             <li class="nav-item active">
               <router-link class="nav-link" to="AdminOrder"
-                >Просмотр заявок</router-link
+                >List order</router-link
               >
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="AdminBuyList"
-                >История покупок пользователей</router-link
+                >List user buy history</router-link
               >
             </li>
           </ul>
@@ -36,20 +36,20 @@
   </div>
   <br />
   <div class="content">
-    <h1 style="text-align: center; font-size: 2em">Заявки</h1>
+    <h1 style="text-align: center; font-size: 2em">Orders</h1>
     <br />
 
     <!-- Проверяем наличие данных -->
     <table v-if="data && data.length" class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Номер заказа</th>
-          <th scope="col">ФИО</th>
+          <th scope="col">Order Number</th>
+          <th scope="col">Full Name</th>
           <th scope="col">Email</th>
-          <th scope="col">Телефон</th>
-          <th scope="col">Название книги</th>
-          <th scope="col">ID книги</th>
-          <th scope="col">Имя учетной записи</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Book Title</th>
+          <th scope="col">Book ID</th>
+          <th scope="col">Account Name</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -82,9 +82,7 @@
           height: 60vh;
         "
       >
-        <h2 style="font-size: 40px; font-family: 'Montserrat'">
-          Заявки отсутвуют
-        </h2>
+        <h2 style="font-size: 40px; font-family: 'Montserrat'">Not found</h2>
       </div>
     </div>
   </div>

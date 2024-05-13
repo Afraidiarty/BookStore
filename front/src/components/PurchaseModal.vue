@@ -2,21 +2,21 @@
   <div class="modalOr">
     <div class="modal-contentOr">
       <span class="close" @click="closeModal">&times;</span>
-      <h2 style="text-align: center">Оформление заказа</h2>
+      <h2 style="text-align: center">{{ $t("add_order") }}</h2>
       <form @submit.prevent="addOrder">
         <div class="form-group">
-          <label for="FIO">ФИО:</label>
+          <label for="FIO">{{ $t("FIO") }}:</label>
           <input type="text" id="FIO" v-model="formData.FIO" required />
         </div>
         <div class="form-group">
-          <label for="email">Email:</label>
+          <label for="email">{{ $t("Email") }}:</label>
           <input type="email" id="email" v-model="formData.email" required />
         </div>
         <div class="form-group">
-          <label for="phone">Номер телефона:</label>
+          <label for="phone">{{ $t("phone") }}:</label>
           <input type="tel" id="phone" v-model="formData.phone" required />
         </div>
-        <button type="submit">Заказать</button>
+        <button type="submit">{{ $t("order") }}</button>
       </form>
     </div>
   </div>

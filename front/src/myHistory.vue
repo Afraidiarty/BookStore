@@ -2,14 +2,14 @@
   <AppHeader />
   <div class="content">
     <br />
-    <h1 style="text-align: center; font-size: 2em">История покупок книг</h1>
+    <h1 style="text-align: center; font-size: 2em">{{ $t("historyBuy") }}</h1>
     <br />
     <table class="table">
       <thead>
         <tr>
-          <th>Номер покупки</th>
-          <th>Название Книги</th>
-          <th>Цена</th>
+          <th>{{ $t("numBuy") }}</th>
+          <th>{{ $t("nameBook") }}</th>
+          <th>{{ $t("price") }}</th>
         </tr>
       </thead>
       <tbody>
